@@ -157,19 +157,13 @@ At Frontline, this is more than just washing cars. It’s about building relatio
     </div>
   </div>
 </section>
-
-{/* WHY CHOOSE US */}
-<section className="scroll-mt-28 relative py-24 px-6 md:px-20 overflow-hidden">
   
-  {/* BACKGROUND IMAGE */}
-  <img
-    src="/why-frontline.jpg"
-    alt="Frontline Background"
-    className="absolute inset-0 w-full h-full object-cover opacity-10"
-  />
-
-  {/* DARK OVERLAY */}
-  <div className="absolute inset-0 bg-black/85" />
+ {/* WHY CHOOSE US */}
+<section
+  className="scroll-mt-28 relative py-24 px-6 md:px-20 overflow-hidden bg-cover bg-center"
+  style={{ backgroundImage: "url('/why-frontline.jpg')" }}
+>
+  <div className="absolute inset-0 bg-black/60" />
 
   <div className="relative z-10 max-w-7xl mx-auto">
     <div className="grid lg:grid-cols-2 gap-14 items-center">
@@ -238,74 +232,89 @@ At Frontline, this is more than just washing cars. It’s about building relatio
 </section>
 
 {/* PRODUCTS WE USE */}
-<section id="products" className="scroll-mt-28 py-24 px-6 md:px-20 bg-neutral-950">
-  <div className="max-w-7xl mx-auto">
+<section
+  id="products"
+  className="scroll-mt-28 py-24 px-6 md:px-20 bg-black"
+>
+  <div className="max-w-6xl mx-auto">
+    
     <div className="text-center mb-16">
       <p className="text-blue-500 font-bold tracking-[0.25em] uppercase mb-3">
-        Products We Use
+        Trusted Products
       </p>
 
       <h3 className="text-4xl md:text-5xl font-black">
-        Professional-Grade Products
+        Professional Products We Trust
       </h3>
 
       <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-        Frontline Car Wash uses quality detailing products designed to clean,
-        protect, and enhance every vehicle we service.
+        Frontline Car Wash uses professional-grade detailing products trusted
+        throughout the automotive detailing industry.
       </p>
     </div>
 
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {[
-        {
-          title: "Premium Soaps",
-          text: "Safe wash products designed to remove dirt and grime while protecting vehicle finishes.",
-          image: "/P&S.png",
-        },
-        {
-          title: "Interior Cleaners",
-          text: "Professional cleaners for leather, plastics, carpets, mats, and interior surfaces.",
-          image: "/interior.jpg",
-        },
-        {
-          title: "Wheel & Tire Care",
-          text: "Detailing products designed to clean brake dust and restore tire shine.",
-          image: "/wheel.jpg",
-        },
-        {
-          title: "Paint Protection",
-          text: "Quality waxes and protectants used to help preserve shine and protect paint.",
-          image: "/System X.png",
-        },
-      ].map((product) => (
-        <div
-          key={product.title}
-          className="overflow-hidden bg-black border border-white/10 rounded-3xl hover:border-blue-500 hover:-translate-y-2 transition duration-300 shadow-2xl"
-        >
-          {/* IMAGE */}
-          <div className="h-52 overflow-hidden">
-            <img
-              src={product.image}
-              alt={product.title}
-              className="w-full h-full object-cover hover:scale-105 transition duration-500"
-            />
-          </div>
+    <div className="grid md:grid-cols-2 gap-10">
 
-          {/* CONTENT */}
-          <div className="p-7">
-            <h4 className="text-2xl font-black mb-3">
-              {product.title}
-            </h4>
-
-            <p className="text-gray-400 leading-7">
-              {product.text}
-            </p>
-          </div>
+      {/* P&S */}
+      <div className="group overflow-hidden rounded-3xl border border-white/10 bg-neutral-950 hover:border-blue-500 transition duration-300 shadow-2xl">
+        
+        <div className="h-72 bg-black flex items-center justify-center p-10">
+          <img
+            src="/P&S 4.png"
+            alt="P&S Detailing Products"
+            className="max-h-full object-contain group-hover:scale-105 transition duration-500"
+          />
         </div>
-      ))}
+
+        <div className="p-8">
+          <p className="text-blue-400 font-bold uppercase tracking-widest text-sm mb-3">
+            Detailing Products
+          </p>
+
+          <h4 className="text-3xl font-black mb-4">
+            P&S Professional Products
+          </h4>
+
+          <p className="text-gray-400 leading-8 text-lg">
+            Frontline uses P&S professional detailing products known throughout
+            the industry for quality cleaning performance, interior care, and
+            professional-grade finishes.
+          </p>
+        </div>
+      </div>
+
+      {/* SYSTEM X */}
+      <div className="group overflow-hidden rounded-3xl border border-white/10 bg-neutral-950 hover:border-blue-500 transition duration-300 shadow-2xl">
+        
+        <div className="h-72 bg-black flex items-center justify-center p-10">
+          <img
+            src="/System X.jpg"
+            alt="System X Ceramic Coating"
+            className="max-h-full object-contain group-hover:scale-105 transition duration-500"
+          />
+        </div>
+
+        <div className="p-8">
+          <p className="text-blue-400 font-bold uppercase tracking-widest text-sm mb-3">
+            Ceramic Coating
+          </p>
+
+          <h4 className="text-3xl font-black mb-4">
+            System X Ceramic Protection
+          </h4>
+
+          <p className="text-gray-400 leading-8 text-lg">
+            Frontline uses System X ceramic protection products designed to help
+            protect paint, enhance gloss, and provide long-lasting surface
+            protection for vehicles.
+          </p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
      {/* GALLERY */}
      <section id="gallery" className="scroll-mt-28 py-24 px-6 md:px-20 bg-neutral-950">
   <div className="max-w-7xl mx-auto">
