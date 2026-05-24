@@ -371,6 +371,7 @@ At Frontline, this is more than just washing cars. It’s about building relatio
 
      {/* CONTACT / QUOTE FORM */}
 <section
+  id="contact"
   className="scroll-mt-28 py-24 px-6 md:px-20 bg-blue-600"
 >
   <div className="max-w-5xl mx-auto">
