@@ -82,13 +82,17 @@ At Frontline, this is more than just washing cars. It’s about building relatio
       </section>
 
     {/* SERVICES */}
-    <section id="services" className="scroll-mt-28 py-20 px-6 md:px-20 bg-black">
+<section id="services" className="scroll-mt-28 py-20 px-6 md:px-20 bg-black">
   <div className="max-w-7xl mx-auto">
     <div className="text-center mb-16">
       <p className="text-blue-500 font-bold tracking-[0.25em] uppercase mb-3">
         Detailing Packages
       </p>
-      <h3 className="text-4xl md:text-5xl font-black">Our Services</h3>
+
+      <h3 className="text-4xl md:text-5xl font-black">
+        Our Services
+      </h3>
+
       <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
         Professional vehicle care for everyday drivers, luxury vehicles, work trucks,
         and public safety vehicles.
@@ -101,42 +105,53 @@ At Frontline, this is more than just washing cars. It’s about building relatio
           title: "Exterior Wash",
           badge: "Clean & Protect",
           text: "Hand wash, foam bath, wheels, tires, windows, bug removal, and a clean finish built to make your vehicle stand out.",
-        },
-        {
-          title: "Interior Detail",
-          badge: "Deep Interior Reset",
-          text: "Vacuuming, wipe-downs, cup holders, vents, plastics, door panels, glass, and interior refresh for a cleaner ride.",
+          image: "/FCW photo 7.jpg",
         },
         {
           title: "Full Detail",
-          badge: "Complete Package",
-          text: "A full inside-and-out detail designed for daily drivers, patrol cars, luxury vehicles, SUVs, and work vehicles.",
+          badge: "Complete Refresh",
+          text: "Comprehensive interior and exterior detailing, including deep cleaning, stain removal, leather conditioning, and paint protection for a like-new finish.",
+          image: "/FCW photo 10.jpg",
+        },
+        {
+          title: "Ceramic Coating",
+          badge: "Complete Protection",
+          text: "Protect your investment with our premium ceramic coating service, designed to provide long-lasting shine and protection.",
+          image: "/FCW photo 12.jpg",
         },
       ].map((service) => (
         <div
           key={service.title}
-          className="group bg-gradient-to-b from-neutral-900 to-black rounded-3xl p-8 border border-white/10 hover:border-blue-500 transition shadow-2xl"
+          className="group relative overflow-hidden rounded-3xl min-h-[420px] border border-white/10 hover:border-blue-500 transition duration-300 shadow-2xl"
         >
-          <div className="mb-6">
-            <span className="inline-block bg-blue-600/20 text-blue-400 border border-blue-500/30 px-4 py-2 rounded-full text-sm font-bold">
+          <img
+            src={service.image}
+            alt={service.title}
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
+
+          <div className="relative z-10 h-full min-h-[420px] flex flex-col justify-end p-8">
+            <span className="inline-block w-fit bg-blue-600/25 text-blue-300 border border-blue-500/40 px-4 py-2 rounded-full text-sm font-bold mb-5">
               {service.badge}
             </span>
+
+            <h4 className="text-3xl font-black mb-4 group-hover:text-blue-400 transition">
+              {service.title}
+            </h4>
+
+            <p className="text-gray-200 leading-7 mb-6">
+              {service.text}
+            </p>
+
+            <a
+              href="#contact"
+              className="inline-block text-blue-300 font-bold hover:text-blue-200 transition"
+            >
+              Request Quote →
+            </a>
           </div>
-
-          <h4 className="text-2xl font-black mb-4 group-hover:text-blue-400 transition">
-            {service.title}
-          </h4>
-
-          <p className="text-gray-300 leading-7 mb-6">
-            {service.text}
-          </p>
-
-          <a
-            href="#contact"
-            className="inline-block text-blue-400 font-bold hover:text-blue-300 transition"
-          >
-            Request Quote →
-          </a>
         </div>
       ))}
     </div>
@@ -144,8 +159,19 @@ At Frontline, this is more than just washing cars. It’s about building relatio
 </section>
 
 {/* WHY CHOOSE US */}
-<section className="scroll-mt-28 py-24 px-6 md:px-20 bg-neutral-950">
-  <div className="max-w-7xl mx-auto">
+<section className="scroll-mt-28 relative py-24 px-6 md:px-20 overflow-hidden">
+  
+  {/* BACKGROUND IMAGE */}
+  <img
+    src="/why-frontline.jpg"
+    alt="Frontline Background"
+    className="absolute inset-0 w-full h-full object-cover opacity-10"
+  />
+
+  {/* DARK OVERLAY */}
+  <div className="absolute inset-0 bg-black/85" />
+
+  <div className="relative z-10 max-w-7xl mx-auto">
     <div className="grid lg:grid-cols-2 gap-14 items-center">
       
       <div>
@@ -157,7 +183,7 @@ At Frontline, this is more than just washing cars. It’s about building relatio
           Detail Work Built On Pride, Trust, And Service.
         </h3>
 
-        <p className="text-gray-400 text-lg leading-8 mb-8">
+        <p className="text-gray-300 text-lg leading-8 mb-8">
           Frontline Car Wash brings a public safety mindset to every vehicle:
           professionalism, attention to detail, clear communication, and respect
           for the people we serve.
@@ -192,14 +218,15 @@ At Frontline, this is more than just washing cars. It’s about building relatio
         ].map((item) => (
           <div
             key={item.title}
-            className="bg-black border border-white/10 rounded-3xl p-7 hover:border-blue-500 hover:-translate-y-2 transition duration-300 shadow-2xl"
+            className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-3xl p-7 hover:border-blue-500 hover:-translate-y-2 transition duration-300 shadow-2xl"
           >
-<div className="w-16 h-1 bg-blue-500 rounded-full mb-5" />
+            <div className="w-16 h-1 bg-blue-500 rounded-full mb-5" />
+
             <h4 className="text-xl font-black mb-3">
               {item.title}
             </h4>
 
-            <p className="text-gray-400 leading-7">
+            <p className="text-gray-300 leading-7">
               {item.text}
             </p>
           </div>
