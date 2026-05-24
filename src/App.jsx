@@ -27,8 +27,7 @@ export default function App() {
         <img
           src="/FCW photo 5.jpg"
           alt="Frontline Car Wash"
-          className="w-full h-[650px] object-cover opacity-40"
-        />
+          className="w-full h-[650px] object-cover object-center opacity-30"        />
 
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
           <img
@@ -84,62 +83,67 @@ Built for those who serve. Trusted by the community.
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section
-        id="services"
-        className="py-20 px-6 md:px-20 bg-black"
-      >
-        <div className="text-center mb-14">
-          <h3 className="text-4xl font-bold">Our Services</h3>
-          <p className="text-gray-400 mt-4">
-            Quality detailing packages designed for every vehicle.
+    {/* SERVICES */}
+<section id="services" className="py-24 px-6 md:px-20 bg-black">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-16">
+      <p className="text-blue-500 font-bold tracking-[0.25em] uppercase mb-3">
+        Detailing Packages
+      </p>
+      <h3 className="text-4xl md:text-5xl font-black">Our Services</h3>
+      <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+        Professional vehicle care for everyday drivers, luxury vehicles, work trucks,
+        and public safety vehicles.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          title: "Exterior Wash",
+          badge: "Clean & Protect",
+          text: "Hand wash, foam bath, wheels, tires, windows, bug removal, and a clean finish built to make your vehicle stand out.",
+        },
+        {
+          title: "Interior Detail",
+          badge: "Deep Interior Reset",
+          text: "Vacuuming, wipe-downs, cup holders, vents, plastics, door panels, glass, and interior refresh for a cleaner ride.",
+        },
+        {
+          title: "Full Detail",
+          badge: "Complete Package",
+          text: "A full inside-and-out detail designed for daily drivers, patrol cars, luxury vehicles, SUVs, and work vehicles.",
+        },
+      ].map((service) => (
+        <div
+          key={service.title}
+          className="group bg-gradient-to-b from-neutral-900 to-black rounded-3xl p-8 border border-white/10 hover:border-blue-500 transition shadow-2xl"
+        >
+          <div className="mb-6">
+            <span className="inline-block bg-blue-600/20 text-blue-400 border border-blue-500/30 px-4 py-2 rounded-full text-sm font-bold">
+              {service.badge}
+            </span>
+          </div>
+
+          <h4 className="text-2xl font-black mb-4 group-hover:text-blue-400 transition">
+            {service.title}
+          </h4>
+
+          <p className="text-gray-300 leading-7 mb-6">
+            {service.text}
           </p>
 
-          <img
-            src="/FCW photo 5.jpg"
-            alt="Frontline Gallery"
-            className="rounded-3xl shadow-2xl border border-white/10"
-          />
+          <a
+            href="#contact"
+            className="inline-block text-blue-400 font-bold hover:text-blue-300 transition"
+          >
+            Request Quote →
+          </a>
         </div>
-
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {/* SERVICE 1 */}
-          <div className="bg-neutral-900 rounded-3xl p-8 border border-white/10 hover:border-blue-500 transition">
-            <h4 className="text-2xl font-bold mb-4 text-blue-500">
-              Exterior Wash
-            </h4>
-
-            <p className="text-gray-300 leading-7">
-              Foam wash, hand wash, tire shine, wheel cleaning, windows, and
-              exterior protection for a spotless finish.
-            </p>
-          </div>
-
-          {/* SERVICE 2 */}
-          <div className="bg-neutral-900 rounded-3xl p-8 border border-white/10 hover:border-blue-500 transition">
-            <h4 className="text-2xl font-bold mb-4 text-blue-500">
-              Interior Detail
-            </h4>
-
-            <p className="text-gray-300 leading-7">
-              Full vacuum, wipe down, stain removal, plastics treatment, vents,
-              and deep interior cleaning.
-            </p>
-          </div>
-
-          {/* SERVICE 3 */}
-          <div className="bg-neutral-900 rounded-3xl p-8 border border-white/10 hover:border-blue-500 transition">
-            <h4 className="text-2xl font-bold mb-4 text-blue-500">
-              Full Detail
-            </h4>
-
-            <p className="text-gray-300 leading-7">
-              Complete inside-and-out detailing package to restore your vehicle
-              and keep it protected.
-            </p>
-          </div>
-        </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* WHY CHOOSE US */}
       <section className="py-20 px-6 md:px-20 bg-neutral-950">
@@ -164,98 +168,214 @@ Built for those who serve. Trusted by the community.
         </div>
       </section>
 
-      {/* GALLERY */}
-      <section className="py-20 px-6 md:px-20 bg-black">
-        <div className="text-center mb-14">
-          <h3 className="text-4xl font-bold">Gallery</h3>
-          <p className="text-gray-400 mt-4">
-            Quality work you can trust.
+     {/* GALLERY */}
+<section className="py-24 px-6 md:px-20 bg-neutral-950">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-16">
+      <p className="text-blue-500 font-bold tracking-[0.25em] uppercase mb-3">
+        Recent Work
+      </p>
+      <h3 className="text-4xl md:text-5xl font-black">Gallery</h3>
+      <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+        From luxury cars to everyday vehicles and patrol units, Frontline takes
+        pride in every detail.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        "/FCW photo 1.jpg",
+        "/FCW photo 2.jpg",
+        "/FCW photo 3.jpg",
+        "/FCW photo 4.jpg",
+        "/FCW photo 7.jpg",
+        "/FCW photo 8.jpg",
+      ].map((photo, index) => (
+        <div
+          key={photo}
+          className="group relative overflow-hidden rounded-3xl border border-white/10 bg-black shadow-2xl"
+        >
+          <img
+            src={photo}
+            alt={`Frontline Car Wash gallery photo ${index + 1}`}
+            className="h-80 w-full object-contain bg-black image-rendering-auto group-hover:scale-105 transition duration-500"          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-80" />
+
+          <div className="absolute bottom-5 left-5 right-5">
+            <p className="text-sm text-blue-300 font-bold tracking-widest uppercase">
+              Frontline Detail
+            </p>
+            <h4 className="text-xl font-black">
+              Professional Finish
+            </h4>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+{/* REVIEWS */}
+<section className="py-24 px-6 md:px-20 bg-black">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-16">
+      <p className="text-blue-500 font-bold tracking-[0.25em] uppercase mb-3">
+        Customer Feedback
+      </p>
+      <h3 className="text-4xl md:text-5xl font-black">What Customers Say</h3>
+      <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+        Trusted by everyday drivers, public safety professionals, and local vehicle owners.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          name: "Dylan Blake",
+          text: "Lucas did an AMAZING job on our Sequoia. Having two kids plus two parents with demanding full time jobs, we often don’t have the time to be as detailed on our vehicles as we want to be. Not only are his services affordable, he has top quality products and an unmatched attention to detail. It is back to looking even cleaner than when we bought it!"
+        },{
+          name: "Customer Review",
+          text: "Professional, reliable, and very detail-oriented. You can tell they take pride in their work.",
+        },
+        {
+          name: "Customer Review",
+          text: "Great service and great communication. Highly recommend Frontline Car Wash.",
+        },
+      ].map((review) => (
+        <div
+          key={review.text}
+          className="bg-neutral-900 border border-white/10 rounded-3xl p-8 shadow-2xl hover:-translate-y-2 hover:border-blue-500 transition duration-300"
+        >
+          <div className="text-blue-400 text-3xl mb-4">★★★★★</div>
+          <p className="text-gray-300 leading-7 mb-6">
+            “{review.text}”
           </p>
+          <p className="font-black text-white">{review.name}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+     {/* CONTACT / QUOTE FORM */}
+<section
+  id="contact"
+  className="py-24 px-6 md:px-20 bg-blue-600"
+>
+  <div className="max-w-5xl mx-auto">
+    <div className="text-center mb-12">
+      <h3 className="text-4xl md:text-5xl font-black mb-4">
+        Get A Quote
+      </h3>
+      <p className="text-xl text-blue-100">
+        Fill out the form below and Frontline Car Wash will follow up with you.
+      </p>
+    </div>
+
+    <form
+      action="https://formsubmit.co/frontlinecarwash26@gmail.com"
+      method="POST"
+      className="bg-black/90 border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl"
+    >
+      <input type="hidden" name="_subject" value="New Quote Request - Frontline Car Wash" />
+      <input type="hidden" name="_captcha" value="false" />
+
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <label className="block font-bold mb-2">Full Name</label>
+          <input
+            type="text"
+            name="name"
+            required
+            className="w-full rounded-xl p-4 bg-neutral-900 border border-white/10 text-white outline-none focus:border-blue-500"
+            placeholder="Your name"
+          />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <img
-            src="/FCW photo 1.jpg"
-            alt="Frontline Gallery"
-            className="rounded-3xl shadow-2xl border border-white/10"
-          />
-
-          <img
-            src="/FCW photo 2.jpg"
-            alt="Frontline Gallery"
-            className="rounded-3xl shadow-2xl border border-white/10"
-          />
-
-          <img
-            src="/FCW photo 3.jpg"
-            alt="Frontline Gallery"
-            className="rounded-3xl shadow-2xl border border-white/10"
-          />
-
-          <img
-            src="/FCW photo 4.jpg"
-            alt="Frontline Gallery"
-            className="rounded-3xl shadow-2xl border border-white/10"
-          />
-
-           <img
-            src="/FCW photo 7.jpg"
-            alt="Frontline Gallery"
-            className="rounded-3xl shadow-2xl border border-white/10"
-          />
-
-           <img
-            src="/FCW photo 8.jpg"
-            alt="Frontline Gallery"
-            className="rounded-3xl shadow-2xl border border-white/10"
+        <div>
+          <label className="block font-bold mb-2">Phone Number</label>
+          <input
+            type="tel"
+            name="phone"
+            required
+            className="w-full rounded-xl p-4 bg-neutral-900 border border-white/10 text-white outline-none focus:border-blue-500"
+            placeholder="Your phone number"
           />
         </div>
-      </section>
 
-      {/* CONTACT */}
-      <section
-        id="contact"
-        className="py-20 px-6 md:px-20 bg-blue-600 text-center"
+        <div>
+          <label className="block font-bold mb-2">Email</label>
+          <input
+            type="email"
+            name="email"
+            className="w-full rounded-xl p-4 bg-neutral-900 border border-white/10 text-white outline-none focus:border-blue-500"
+            placeholder="Your email"
+          />
+        </div>
+
+        <div>
+          <label className="block font-bold mb-2">Vehicle Type</label>
+          <input
+            type="text"
+            name="vehicle"
+            className="w-full rounded-xl p-4 bg-neutral-900 border border-white/10 text-white outline-none focus:border-blue-500"
+            placeholder="Ex: Truck, SUV, Patrol car"
+          />
+        </div>
+
+        <div>
+          <label className="block font-bold mb-2">Service Needed</label>
+          <select
+            name="service"
+            required
+            className="w-full rounded-xl p-4 bg-neutral-900 border border-white/10 text-white outline-none focus:border-blue-500"
+          >
+            <option value="">Select a service</option>
+            <option>Exterior Wash</option>
+            <option>Interior Detail</option>
+            <option>Full Detail</option>
+            <option>Not Sure / Need Recommendation</option>
+          </select>
+        </div>
+
+        <div>
+          <label className="block font-bold mb-2">Preferred Contact Method</label>
+          <select
+            name="contact_method"
+            className="w-full rounded-xl p-4 bg-neutral-900 border border-white/10 text-white outline-none focus:border-blue-500"
+          >
+            <option>Call</option>
+            <option>Text</option>
+            <option>Email</option>
+            <option>Facebook Message</option>
+          </select>
+        </div>
+      </div>
+
+      <div className="mt-6">
+        <label className="block font-bold mb-2">Message / Vehicle Condition</label>
+        <textarea
+          name="message"
+          rows="5"
+          className="w-full rounded-xl p-4 bg-neutral-900 border border-white/10 text-white outline-none focus:border-blue-500"
+          placeholder="Tell us what you need cleaned, vehicle condition, stains, pet hair, patrol/work vehicle, etc."
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        className="mt-8 w-full bg-blue-600 hover:bg-blue-700 transition rounded-xl py-4 font-black text-lg"
       >
-        <h3 className="text-5xl font-black mb-6">
-          BOOK YOUR DETAIL TODAY
-        </h3>
+        Submit Quote Request
+      </button>
 
-        <p className="text-xl mb-10 max-w-2xl mx-auto">
-          Call, email, or message us on Facebook to schedule your next wash or
-          detailing service.
-        </p>
-
-        <div className="space-y-4 text-2xl font-semibold mb-10">
-          <p>(941) 293-7233</p>
-          <p>frontlinecarwash26@gmail.com</p>
-        </div>
-
-        <div className="flex flex-col sm:flex-row justify-center gap-5">
-          <a
-            href="tel:9412937233"
-            className="bg-white text-blue-700 hover:bg-gray-200 transition px-8 py-4 rounded-xl font-bold"
-          >
-            Call Now
-          </a>
-
-          <a
-            href="mailto:frontlinecarwash26@gmail.com"
-            className="bg-black hover:bg-neutral-800 transition px-8 py-4 rounded-xl font-bold"
-          >
-            Email Us
-          </a>
-
-          <a
-            href="https://www.facebook.com/profile.php?id=61589980678399"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-white hover:bg-white hover:text-blue-700 transition px-8 py-4 rounded-xl font-bold"
-          >
-            Facebook Page
-          </a>
-        </div>
-      </section>
+      <p className="text-center text-gray-400 text-sm mt-6">
+        You can also call/text: (941) 293-7233
+      </p>
+    </form>
+  </div>
+</section>
 
       {/* FOOTER */}
       <footer className="bg-black border-t border-white/10 py-8 text-center text-gray-500">
