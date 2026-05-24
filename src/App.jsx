@@ -197,6 +197,30 @@ Built for those who serve. Trusted by the community.
             alt="Frontline Gallery"
             className="rounded-3xl shadow-2xl border border-white/10"
           />
+
+           <img
+            src="/FCW photo 7.jpg"
+            alt="Frontline Gallery"
+            className="rounded-3xl shadow-2xl border border-white/10"
+          />
+
+           <img
+            src="/FCW photo 8.jpg"
+            alt="Frontline Gallery"
+            className="rounded-3xl shadow-2xl border border-white/10"
+          />
+
+           <img
+            src="/FCW photo 9.jpg"
+            alt="Frontline Gallery"
+            className="rounded-3xl shadow-2xl border border-white/10"
+          />
+
+           <img
+            src="/FCW photo 10.jpg"
+            alt="Frontline Gallery"
+            className="rounded-3xl shadow-2xl border border-white/10"
+          />
         </div>
       </section>
 
@@ -248,7 +272,7 @@ Built for those who serve. Trusted by the community.
       {/* FOOTER */}
       <footer className="bg-black border-t border-white/10 py-8 text-center text-gray-500">
         <p>
-          © 2026 Frontline Car Wash. All Rights Reserved.
+          © 2026 High Rock Custom Designs
         </p>
       </footer>
     </div>
