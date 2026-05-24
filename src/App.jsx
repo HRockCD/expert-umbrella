@@ -65,7 +65,7 @@ export default function App() {
       </section>
 
       {/* ABOUT */}
-      <section className="py-20 px-6 md:px-20 bg-neutral-950">
+      <section id="about" className="scroll-mt-28 py-20 px-6 md:px-20 bg-neutral-950">
         <div className="max-w-5xl mx-auto text-center">
           <h3 className="text-4xl font-bold mb-6">About Frontline</h3>
 
@@ -77,14 +77,12 @@ With several years of detailing experience, Frontline Car Wash has worked on eve
 
 At Frontline, this is more than just washing cars. It’s about building relationships, serving the local community, and providing dependable, professional service people can trust. Whether you're a first responder, business owner, tradesman, or everyday driver, Frontline Car Wash is committed to delivering a clean vehicle and an experience built on respect and integrity.
 
-Built for those who serve. Trusted by the community.
-
           </p>
         </div>
       </section>
 
     {/* SERVICES */}
-<section id="services" className="py-24 px-6 md:px-20 bg-black">
+    <section id="services" className="scroll-mt-28 py-20 px-6 md:px-20 bg-black">
   <div className="max-w-7xl mx-auto">
     <div className="text-center mb-16">
       <p className="text-blue-500 font-bold tracking-[0.25em] uppercase mb-3">
@@ -168,8 +166,77 @@ Built for those who serve. Trusted by the community.
         </div>
       </section>
 
+{/* PRODUCTS WE USE */}
+<section id="products" className="scroll-mt-28 py-24 px-6 md:px-20 bg-neutral-950">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-16">
+      <p className="text-blue-500 font-bold tracking-[0.25em] uppercase mb-3">
+        Products We Use
+      </p>
+
+      <h3 className="text-4xl md:text-5xl font-black">
+        Professional-Grade Products
+      </h3>
+
+      <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+        Frontline Car Wash uses quality detailing products designed to clean,
+        protect, and enhance every vehicle we service.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {[
+        {
+          title: "Premium Soaps",
+          text: "Safe wash products designed to remove dirt and grime while protecting vehicle finishes.",
+          image: "/P&S.png",
+        },
+        {
+          title: "Interior Cleaners",
+          text: "Professional cleaners for leather, plastics, carpets, mats, and interior surfaces.",
+          image: "/interior.jpg",
+        },
+        {
+          title: "Wheel & Tire Care",
+          text: "Detailing products designed to clean brake dust and restore tire shine.",
+          image: "/wheel.jpg",
+        },
+        {
+          title: "Paint Protection",
+          text: "Quality waxes and protectants used to help preserve shine and protect paint.",
+          image: "/System X.png",
+        },
+      ].map((product) => (
+        <div
+          key={product.title}
+          className="overflow-hidden bg-black border border-white/10 rounded-3xl hover:border-blue-500 hover:-translate-y-2 transition duration-300 shadow-2xl"
+        >
+          {/* IMAGE */}
+          <div className="h-52 overflow-hidden">
+            <img
+              src={product.image}
+              alt={product.title}
+              className="w-full h-full object-cover hover:scale-105 transition duration-500"
+            />
+          </div>
+
+          {/* CONTENT */}
+          <div className="p-7">
+            <h4 className="text-2xl font-black mb-3">
+              {product.title}
+            </h4>
+
+            <p className="text-gray-400 leading-7">
+              {product.text}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
      {/* GALLERY */}
-<section className="py-24 px-6 md:px-20 bg-neutral-950">
+     <section id="gallery" className="scroll-mt-28 py-24 px-6 md:px-20 bg-neutral-950">
   <div className="max-w-7xl mx-auto">
     <div className="text-center mb-16">
       <p className="text-blue-500 font-bold tracking-[0.25em] uppercase mb-3">
@@ -217,7 +284,7 @@ Built for those who serve. Trusted by the community.
 </section>
 
 {/* REVIEWS */}
-<section className="py-24 px-6 md:px-20 bg-black">
+<section id="reviews" className="scroll-mt-28 py-24 px-6 md:px-20 bg-black">
   <div className="max-w-7xl mx-auto">
     <div className="text-center mb-16">
       <p className="text-blue-500 font-bold tracking-[0.25em] uppercase mb-3">
@@ -260,8 +327,7 @@ Built for those who serve. Trusted by the community.
 
      {/* CONTACT / QUOTE FORM */}
 <section
-  id="contact"
-  className="py-24 px-6 md:px-20 bg-blue-600"
+  className="scroll-mt-28 py-24 px-6 md:px-20 bg-blue-600"
 >
   <div className="max-w-5xl mx-auto">
     <div className="text-center mb-12">
@@ -377,12 +443,73 @@ Built for those who serve. Trusted by the community.
   </div>
 </section>
 
-      {/* FOOTER */}
-      <footer className="bg-black border-t border-white/10 py-8 text-center text-gray-500">
-        <p>
-          © 2026 High Rock Custom Designs
+{/* FOOTER */}
+<footer className="bg-black border-t border-white/10 py-10 px-6">
+  <div className="max-w-7xl mx-auto">
+    <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div className="text-center md:text-left">
+        <h4 className="text-2xl font-black tracking-wide text-white">
+          FRONTLINE CAR WASH
+        </h4>
+
+        <p className="text-gray-400 mt-2">
+          Built For Those Who Serve
         </p>
-      </footer>
+
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-6 text-sm font-semibold text-gray-400">
+        <a href="#about" className="hover:text-blue-400 transition">About</a>
+        <a href="#services" className="hover:text-blue-400 transition">Services</a>
+        <a href="#gallery" className="hover:text-blue-400 transition">Gallery</a>
+        <a href="#reviews" className="hover:text-blue-400 transition">Reviews</a>
+        <a href="#products" className="hover:text-blue-400 transition">Products</a>
+      </div>
+
+      <div className="text-center md:text-right">
+        <p className="text-white font-bold">(941) 293-7233</p>
+
+        <p className="text-gray-400 mt-2">
+          frontlinecarwash26@gmail.com
+        </p>
+
+        <a
+          href="https://www.facebook.com/profile.php?id=61589980678399"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-4 text-blue-400 hover:text-blue-300 transition font-semibold"
+        >
+          Facebook Page →
+        </a>
+      </div>
     </div>
+
+  <div className="border-t border-white/10 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+  <p>
+    © 2026 Frontline Car Wash. All Rights Reserved.
+  </p>
+
+  <p className="text-center">
+    Powered by{" "}
+    <a
+      href="https://detailersofyadkinville.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-400 hover:text-blue-300 transition"
+    >
+      Detailers of Yadkinville
+    </a>
+
+    {" "}•{" "}
+
+    Website by{" "}
+    <span className="text-white font-semibold">
+      High Rock Custom Designs
+    </span>
+  </p>
+</div>
+    </div>
+  </footer>
+  </div>
   );
 }
