@@ -209,18 +209,6 @@ Built for those who serve. Trusted by the community.
             alt="Frontline Gallery"
             className="rounded-3xl shadow-2xl border border-white/10"
           />
-
-           <img
-            src="/FCW photo 9.jpg"
-            alt="Frontline Gallery"
-            className="rounded-3xl shadow-2xl border border-white/10"
-          />
-
-           <img
-            src="/FCW photo 10.jpg"
-            alt="Frontline Gallery"
-            className="rounded-3xl shadow-2xl border border-white/10"
-          />
         </div>
       </section>
 
