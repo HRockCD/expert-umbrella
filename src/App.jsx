@@ -25,7 +25,7 @@ export default function App() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <img
-          src="/FCW photo 5.jpg"
+          src="/FCW photo 19.jpg"
           alt="Frontline Car Wash"
           className="w-full h-[650px] object-cover object-center opacity-30"        />
 
@@ -143,28 +143,72 @@ At Frontline, this is more than just washing cars. It’s about building relatio
   </div>
 </section>
 
-      {/* WHY CHOOSE US */}
-      <section className="py-20 px-6 md:px-20 bg-neutral-950">
-        <div className="text-center mb-14">
-          <h3 className="text-4xl font-bold">Why Choose Frontline?</h3>
-        </div>
+{/* WHY CHOOSE US */}
+<section className="scroll-mt-28 py-24 px-6 md:px-20 bg-neutral-950">
+  <div className="max-w-7xl mx-auto">
+    <div className="grid lg:grid-cols-2 gap-14 items-center">
+      
+      <div>
+        <p className="text-blue-500 font-bold tracking-[0.25em] uppercase mb-3">
+          Why Choose Frontline
+        </p>
 
-        <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {[
-            "Professional Service",
-            "Attention To Detail",
-            "Reliable Scheduling",
-            "Locally Owned",
-          ].map((item) => (
-            <div
-              key={item}
-              className="bg-neutral-900 border border-white/10 rounded-2xl p-8 text-center font-semibold text-lg"
-            >
-              {item}
-            </div>
-          ))}
-        </div>
-      </section>
+        <h3 className="text-4xl md:text-5xl font-black mb-6">
+          Detail Work Built On Pride, Trust, And Service.
+        </h3>
+
+        <p className="text-gray-400 text-lg leading-8 mb-8">
+          Frontline Car Wash brings a public safety mindset to every vehicle:
+          professionalism, attention to detail, clear communication, and respect
+          for the people we serve.
+        </p>
+
+        <a
+          href="#contact"
+          className="inline-block bg-blue-600 hover:bg-blue-700 transition px-8 py-4 rounded-xl font-bold"
+        >
+          Get A Quote
+        </a>
+      </div>
+
+      <div className="grid sm:grid-cols-2 gap-6">
+        {[
+          {
+            title: "Owner Operated",
+            text: "Every job is handled with pride, accountability, and personal attention.",
+          },
+          {
+            title: "Law Enforcement Owned",
+            text: "Built by someone who understands service, discipline, and community trust.",
+          },
+          {
+            title: "Detail Driven",
+            text: "From luxury vehicles to patrol cars, every vehicle gets the same level of care.",
+          },
+          {
+            title: "Community Focused",
+            text: "Supporting those who serve while providing dependable local vehicle care.",
+          },
+        ].map((item) => (
+          <div
+            key={item.title}
+            className="bg-black border border-white/10 rounded-3xl p-7 hover:border-blue-500 hover:-translate-y-2 transition duration-300 shadow-2xl"
+          >
+<div className="w-16 h-1 bg-blue-500 rounded-full mb-5" />
+            <h4 className="text-xl font-black mb-3">
+              {item.title}
+            </h4>
+
+            <p className="text-gray-400 leading-7">
+              {item.text}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
 
 {/* PRODUCTS WE USE */}
 <section id="products" className="scroll-mt-28 py-24 px-6 md:px-20 bg-neutral-950">
