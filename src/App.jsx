@@ -516,10 +516,6 @@ At Frontline, this is more than just washing cars. It’s about building relatio
       >
         Submit Quote Request
       </button>
-
-      <p className="text-center text-gray-400 text-sm mt-6">
-        You can also call/text: (941) 293-7233
-      </p>
     </form>
   </div>
 </section>
