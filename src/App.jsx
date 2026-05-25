@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/react"
 export default function App() {
   return (
-    <div className="min-h-screen bg-black text-white font-sans">
+    <div className="min-h-screen bg-black text-white font-sans"> 
       <Analytics />
       <SpeedInsights />
   
@@ -87,8 +87,8 @@ At Frontline, this is more than just washing cars. It’s about building relatio
         </div>
       </section>
 
-    {/* SERVICES */}
-<section id="services" className="scroll-mt-28 py-20 px-6 md:px-20 bg-black">
+  {/* DETAILING PACKAGES */}
+<section id="services" className="scroll-mt-28 py-24 px-6 md:px-20 bg-black">
   <div className="max-w-7xl mx-auto">
     <div className="text-center mb-16">
       <p className="text-blue-500 font-bold tracking-[0.25em] uppercase mb-3">
@@ -96,75 +96,221 @@ At Frontline, this is more than just washing cars. It’s about building relatio
       </p>
 
       <h3 className="text-4xl md:text-5xl font-black">
-        Our Services
+        Our Packages
       </h3>
 
       <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-        Professional vehicle care for everyday drivers, luxury vehicles, work trucks,
-        and public safety vehicles.
+        Professional detailing packages built for everyday drivers, luxury vehicles,
+        public safety vehicles, and complete vehicle resets.
       </p>
     </div>
 
-    <div className="grid md:grid-cols-3 gap-8">
+    <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
       {[
         {
-          title: "Exterior Wash",
-          badge: "Clean & Protect",
-          text: "Hand wash, foam bath, wheels, tires, windows, bug removal, and a clean finish built to make your vehicle stand out.",
-          image: "/FCW photo 7.jpg",
+          title: "Basic Clean",
+          price: "$50",
+          subtitle: "Cars & SUVs",
+          image: "/exterior.jpg",
+          description: "A solid refresh for everyday drivers.",
+          includes: [
+            "Exterior Hand Wash",
+            "Tire & Wheel Clean",
+            "Interior Vacuum",
+            "Dashboard & Console Wipe Down",
+            "Window Clean Inside & Out",
+          ],
         },
         {
-          title: "Full Detail",
-          badge: "Complete Refresh",
-          text: "Comprehensive interior and exterior detailing, including deep cleaning, stain removal, leather conditioning, and paint protection for a like-new finish.",
-          image: "/FCW photo 10.jpg",
+          title: "Front Line Detail",
+          price: "$159",
+          subtitle: "Cars & SUVs",
+          image: "/interior-detail.jpg",
+          description: "Our best all-around detail for a like-new feel.",
+          includes: [
+            "Everything in Basic Clean",
+            "Foam Pre-Soak",
+            "Hand Wash & Dry",
+            "Interior Deep Clean",
+            "Door Jambs Cleaned",
+            "Leather/Vinyl Conditioning",
+            "Air Vents & Crevices Detailed",
+            "Protectant Applied",
+          ],
         },
         {
-          title: "Ceramic Coating",
-          badge: "Complete Protection",
-          text: "Protect your investment with our premium ceramic coating service, designed to provide long-lasting shine and protection.",
-          image: "/FCW photo 12.jpg",
+          title: "Premium Detail",
+          price: "$249",
+          subtitle: "Cars & SUVs",
+          image: "/full-detail.jpg",
+          description: "Next-level care for next-level results.",
+          includes: [
+            "Everything in Front Line Detail",
+            "Clay Bar Treatment",
+            "Paint Decontamination",
+            "One-Step Paint Enhancement",
+            "Premium Wax / Sealant",
+            "Engine Bay Clean",
+            "Headlight Restoration",
+          ],
         },
-      ].map((service) => (
+        {
+          title: "Ultimate Detail",
+          price: "Starting At $1000",
+          subtitle: "Cars & SUVs",
+          image: "/ultimate-detail.jpg",
+          description: "The complete top-to-bottom reset.",
+          includes: [
+            "Everything in Premium Detail",
+            "Multi-Step Paint Correction",
+            "System X Max G+",
+            "Interior Steam Clean",
+            "Deep Carpet & Upholstery Shampoo",
+            "Trunk Detail",
+            "Long-Lasting Protection",
+          ],
+        },
+      ].map((pkg) => (
         <div
-          key={service.title}
-          className="group relative overflow-hidden rounded-3xl min-h-[420px] border border-white/10 hover:border-blue-500 transition duration-300 shadow-2xl"
+          key={pkg.title}
+          className="group relative overflow-hidden rounded-3xl border border-white/10 bg-neutral-950 hover:border-blue-500 transition duration-300 shadow-2xl"
         >
-          <img
-            src={service.image}
-            alt={service.title}
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
-          />
+          <div className="relative h-56 overflow-hidden">
+            <img
+              src={pkg.image}
+              alt={pkg.title}
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+          </div>
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
-
-          <div className="relative z-10 h-full min-h-[420px] flex flex-col justify-end p-8">
-            <span className="inline-block w-fit bg-blue-600/25 text-blue-300 border border-blue-500/40 px-4 py-2 rounded-full text-sm font-bold mb-5">
-              {service.badge}
-            </span>
-
-            <h4 className="text-3xl font-black mb-4 group-hover:text-blue-400 transition">
-              {service.title}
+          <div className="p-7">
+            <h4 className="text-2xl font-black mb-2 group-hover:text-blue-400 transition">
+              {pkg.title}
             </h4>
 
-            <p className="text-gray-200 leading-7 mb-6">
-              {service.text}
+            <p className="text-gray-400 mb-6">
+              {pkg.description}
             </p>
+
+            <div className="mb-6">
+              <p className="text-2xl font-black text-blue-500">
+                {pkg.price}
+              </p>
+              <p className="text-sm text-gray-400 font-bold uppercase tracking-widest">
+                {pkg.subtitle}
+              </p>
+            </div>
+
+            <div className="space-y-3 mb-8">
+              {pkg.includes.map((item) => (
+                <div key={item} className="flex gap-3 text-gray-300">
+                  <span className="text-blue-400 font-black">✓</span>
+                  <p>{item}</p>
+                </div>
+              ))}
+            </div>
 
             <a
               href="#contact"
-              className="inline-block text-blue-300 font-bold hover:text-blue-200 transition"
+              className="block text-center bg-blue-600 hover:bg-blue-700 transition rounded-xl py-3 font-black"
             >
-              Request Quote →
+              Request Quote
             </a>
           </div>
         </div>
       ))}
     </div>
+
+   <div className="mt-14 grid lg:grid-cols-3 gap-8">
+  <div className="lg:col-span-2 bg-neutral-950 border border-white/10 rounded-3xl p-8 shadow-2xl">
+    <p className="text-blue-500 font-bold tracking-[0.2em] uppercase mb-3">
+      Add-On Services
+    </p>
+
+    <h4 className="text-3xl font-black mb-3">
+      Enhance Your Detail
+    </h4>
+
+    <p className="text-gray-400 mb-8">
+      Add any of these services to your package for a deeper, more complete clean.
+    </p>
+
+    <div className="grid sm:grid-cols-2 gap-4">
+      {[
+        ["Seat Shampoo", "$25 per seat"],
+        ["Pet Hair Removal", "starting at $75"],
+        ["Paint Correction", "$100 per hour"],
+        ["Glass Coating", "$40 per window"],
+        ["Headlight Restoration", "$65 per headlight"],
+        ["Engine Bay Clean", "$30"],
+        ["Ozone Treatment", "$40"],
+      ].map(([name, price, detail]) => (
+        <div
+          key={name}
+          className="bg-black border border-white/10 rounded-2xl p-5 flex items-center justify-between gap-4 hover:border-blue-500 transition"
+        >
+          <div>
+            <h5 className="font-black text-white">
+              {name}
+            </h5>
+
+            <p className="text-gray-500 text-sm mt-1">
+              {detail}
+            </p>
+          </div>
+
+          <p className="text-1xl font-black text-blue-400">
+            {price}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div className="bg-neutral-950 border border-white/10 rounded-3xl p-8 shadow-2xl">
+    <p className="text-blue-500 font-bold tracking-[0.2em] uppercase mb-3">
+      Service Info
+    </p>
+
+    <h4 className="text-3xl font-black mb-8">
+      Before You Book
+    </h4>
+
+    <div className="space-y-6">
+      <div>
+        <h5 className="font-black text-white mb-2">
+          By Appointment Only
+        </h5>
+        <p className="text-gray-400">
+          Each vehicle gets the time and attention it deserves.
+        </p>
+      </div>
+
+      <div className="border-t border-white/10 pt-6">
+        <h5 className="font-black text-white mb-2">
+          Drop Off Only
+        </h5>
+        <p className="text-gray-400">
+          Focused service for the best possible detailing results.
+        </p>
+      </div>
+
+      <div className="border-t border-white/10 pt-6">
+        <h5 className="font-black text-white mb-2">
+          Serving Yadkinville, NC
+        </h5>
+        <p className="text-gray-400">
+          Local detailing with a community-first mindset.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
   </div>
 </section>
-  
- {/* WHY CHOOSE US */}
+
+{/* WHY CHOOSE US */}
 <section
   className="scroll-mt-28 relative py-24 px-6 md:px-20 overflow-hidden bg-cover bg-center"
   style={{ backgroundImage: "url('/why-frontline.jpg')" }}
@@ -342,7 +488,7 @@ At Frontline, this is more than just washing cars. It’s about building relatio
         "/FCW photo 3.jpg",
         "/FCW photo 4.jpg",
         "/FCW photo 7.jpg",
-        "/FCW photo 8.jpg",
+        "/FCW photo 11.jpg",
       ].map((photo, index) => (
         <div
           key={photo}
