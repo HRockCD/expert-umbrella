@@ -421,7 +421,7 @@ At Frontline, this is more than just washing cars. It’s about building relatio
     </div>
 
     <form
-      action="https://formsubmit.co/frontlinecarwash26@gmail.com"
+      action="https://formsubmit.co/ajax/frontlinecarwash26@gmail.com"
       method="POST"
       className="bg-black/90 border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl"
     >
